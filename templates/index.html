@@ -1,42 +1,24 @@
 <html>
 	<head>
 		<meta charset = "utf-8">
-		<meta http-equiv = "expires" content = "21600">
-		<meta name = "author" content = "Jona Heinke">
-		<meta name = "description" content = "A personal recipe book without trackers, bloat and ads.">
-		<meta name = "theme-color" content = "#555555">
-		<title>TITLE</title>
-		<link ref = "stylesheet" href = "index.css">
-		<style>
-			body {
-				margin: 0;
-			}
-			header {
-				text-align: center;
-			}
-			main {
-				background: #E0E0E0;
-			}
-			footer {
-				width: 100%;
-				height: 4em;
-				color: #FFFFFF;
-				background: #555555;
-			}
-		</style>
+		<meta http-equiv="expires" content="21600">
+		<meta name="theme-color" content="#FF10C0">
+		<title>RECIPES</title>
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="index_landscape.css" media="(orientation: landscape)">
+		<link rel="stylesheet" href="index_portrait.css"  media="(orientation: portrait)">
 	</head>
 	<body>
 		<header>
 			<h1>RECIPE BOOK</h1>
 			<i>A personal recipe book without trackers, bloat and ads.</i>
-			<br><br>
 		</header>
 		<main>
-			<input id = "search" placeholder = "Search for recipes...">
-			<div id = "searchresults"></div>
+			<input id="search" placeholder="Search for recipes...">
+			<div id="searchresults"></div>
 		</main>
-		<footer>
-			Copyright © {{year}}, Jona Heinke
-		</footer>
+		<!--<footer>
+			<div>Copyright © {{year}}, Jona Heinke</div>
+		</footer>-->
 	</body>
 </html>
