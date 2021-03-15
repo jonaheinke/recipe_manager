@@ -1,0 +1,128 @@
+/* ------------------------------------------------ color definitions ----------------------------------------------- */
+body {
+	--main-bg-color: white;
+}
+body.dark {
+	--main-bg-color: darkgray;
+}
+
+/* ------------------------------------------------------ body ------------------------------------------------------ */
+body {
+	margin: 0;
+	background-color: var(--main-bg-color);
+}
+.transition {
+	transition-duration: .4s;
+	transition-timing-function: ease-out;
+}
+
+/* ----------------------------------------------------- header ----------------------------------------------------- */
+header {
+	text-align: center;
+	padding: 1em;
+}
+h1 {
+	margin: 0;
+}
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+/*
+https://www.w3schools.com/howto/howto_css_switch.asp
+https://www.pinterest.de/pin/408420259958692132/ <-
+https://www.pinterest.de/pin/99008891794780360/
+https://www.pinterest.de/pin/665125438702052545/
+https://www.pinterest.de/pin/377458012503792197/
+https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme
+*/
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	/*display: none;*/
+}
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #31BDEB;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 34px;
+}
+.slider::before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: #FFC207;
+	-webkit-transition: .4s;
+	transition: .4s;
+	border-radius: 50%;
+}
+input:checked + .slider {
+	background-color: #27173A;
+}
+input:focus + .slider {
+	box-shadow: 0 0 1py #27173A;
+}
+input:checked + .slider::before {
+	-webkit-transform: translateX(26px);
+	transform: translateX(26px);
+}
+@keyframes suns_shadow {
+	0% {
+		opacity: 0;
+		background-color: #31BDEB;
+	}
+	25% {
+		opacity: 1;
+		transform: translate(0, 0) scale(1, 1);
+	}
+	100% {
+		background-color: #27173A;
+		transform: translate(30px, 1px) scale(10, 10);
+	}
+}
+.slider::after {
+	position: absolute;
+	content: "";
+	height: 2px;
+	width: 1px;
+	left: 4px;
+	bottom: 50%;
+	background-color: #31BDEB;
+	transform: translateY(50%);
+	/*opacity: 0;*/
+	-webkit-transition: .4s;
+	transition-duration: .4s;
+	/*transition-delay: .1s;*/
+	border-radius: 50%;
+	/*
+	animation-name: suns_shadow;
+	animation-duration: .4s;
+	animation-direction: reverse;
+	animation-fill-mode: backwards;*/
+}
+input:checked + .slider::after {
+	background-color: #27173A;
+	transform: translate(30px, 1px) scale(20, 10);
+	/*animation-name: suns_shadow;
+	animation-duration: .4s;
+	animation-fill-mode: forwards;*/
+}
+
+/* ------------------------------------------------------ main ------------------------------------------------------ */
+main {
+	background: #E0E0E0;
+	text-align: center;
+	padding: 1em 0;
+}

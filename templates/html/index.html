@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block html_head %}
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="index_landscape.css" media="(orientation: landscape)">
+<link rel="stylesheet" href="index_portrait.css"  media="(orientation: portrait)">
+{% endblock %}
+
+{% block content %}
+<input id="search" placeholder="Search for recipes...">
+<div id="searchresults">
+	{% for recipe in recipes %}
+		<article>
+			<h2>nice</h2>
+		</article>
+	{% endfor %}
+</div>
+{% endblock %}

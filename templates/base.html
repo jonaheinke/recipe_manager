@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="expires" content="21600">
+		<meta name="theme-color" content="#FF10C0">
+		<title>RECIPES</title>
+		<link rel="stylesheet" href="base.css">
+		<link rel="stylesheet" href="base_landscape.css" media="(orientation: landscape)">
+		<link rel="stylesheet" href="base_portrait.css"  media="(orientation: portrait)">
+		{% block html_head %}{% endblock %}
+		<script>
+			var body = null;
+			var darkmode = {{darkmode['int']}};
+
+			function toggle_theme() {
+				if(body != null) body.classList.toggle("dark");
+				darkmode = !darkmode;
+				document.cookie = "darkmode=" + (darkmode ? 1 : 0) + "; path=/";
+			}
+
+			document.addEventListener("DOMContentLoaded", function(event) {
+				body = document.querySelector("body");
+			});
+		</script>
+	</head>
+	<body class="transition {{darkmode['str']}}">
+		<header>
+			<div>
+				<h1>RECIPE BOOK</h1>
+				<i>A personal recipe book without trackers, bloat and ads.</i>
+			</div>
+			<label class="switch">
+				<input type="checkbox" onclick="toggle_theme()" {{darkmode['checked']}}>
+				<div class="slider"></div>
+			</label>
+		</header>
+		<main>
+			{% block content %}{% endblock %}
+		</main>
+		<!--<footer>
+			<div>Copyright © {{year}}, Jona Heinke</div>
+		</footer>-->
+	</body>
+</html>
