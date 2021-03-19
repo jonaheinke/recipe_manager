@@ -129,3 +129,26 @@ main {
 	text-align: center;
 	padding: 1em 0;
 }
+
+
+
+@media (orientation: landscape) {
+	header {
+		position: relative;
+	}
+	.switch {
+		position: absolute;
+		top: 50%;
+		right: 1em;
+		transform: translateY(-50%);
+	}
+}
+
+@media (orientation: portrait) {
+	h1 {
+		font-size: 6vh;
+	}
+	i {
+		font-size: 2vh;
+	}
+}
