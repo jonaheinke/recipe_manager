@@ -12,7 +12,7 @@ Currently the home page consumes 5.3kB of data before browser cacheing and html/
 
 ## Setup
 ```shell
-$ pip install CherryPy SQLAlchemy Jinja2 Whoosh
+$ pip install CherryPy SQLAlchemy Jinja2 Whoosh css-html-js-minify # last one is optional
 # insert recipe data into database
 $ python search_engine.py
 $ python server.py
