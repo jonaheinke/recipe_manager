@@ -4,12 +4,13 @@
 		<meta http-equiv="expires" content="21600">
 		<meta name="theme-color" content="#FF10C0">
 		<title>RECIPES</title>
-		<link rel="stylesheet" href="base.css">
-		<link rel="stylesheet" href="base_landscape.css" media="(orientation: landscape)">
-		<link rel="stylesheet" href="base_portrait.css"  media="(orientation: portrait)">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/base_landscape.css" media="(orientation: landscape)">
+		<link rel="stylesheet" href="css/base_portrait.css"  media="(orientation: portrait)">
 		{% block html_head %}{% endblock %}
 		<script>
 			var body = null;
+			var earths_shadow = null;
 			var darkmode = {{darkmode['int']}};
 
 			function toggle_theme() {
@@ -19,6 +20,7 @@
 			}
 
 			document.addEventListener("DOMContentLoaded", function(event) {
+				earths_shadow = document.querySelector(".slider::after");
 				body = document.querySelector("body");
 			});
 		</script>

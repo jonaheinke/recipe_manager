@@ -11,6 +11,9 @@ body {
 	margin: 0;
 	background-color: var(--main-bg-color);
 }
+form {
+	margin: 0;
+}
 .transition {
 	transition-duration: .4s;
 	transition-timing-function: ease-out;
@@ -78,7 +81,7 @@ input:checked + .slider::before {
 	-webkit-transform: translateX(26px);
 	transform: translateX(26px);
 }
-@keyframes suns_shadow {
+@keyframes earths_shadow {
 	0% {
 		opacity: 0;
 		background-color: #31BDEB;
@@ -107,7 +110,7 @@ input:checked + .slider::before {
 	/*transition-delay: .1s;*/
 	border-radius: 50%;
 	/*
-	animation-name: suns_shadow;
+	animation-name: earths_shadow;
 	animation-duration: .4s;
 	animation-direction: reverse;
 	animation-fill-mode: backwards;*/
@@ -115,7 +118,7 @@ input:checked + .slider::before {
 input:checked + .slider::after {
 	background-color: #27173A;
 	transform: translate(30px, 1px) scale(20, 10);
-	/*animation-name: suns_shadow;
+	/*animation-name: earths_shadow;
 	animation-duration: .4s;
 	animation-fill-mode: forwards;*/
 }

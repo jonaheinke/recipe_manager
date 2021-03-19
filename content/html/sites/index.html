@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block html_head %}
+<link rel="stylesheet" href="css/sites/index.css">
+<link rel="stylesheet" href="css/sites/index_landscape.css" media="(orientation: landscape)">
+<script>
+	function change_query() {
+		var request = new XMLHttpRequest();
+		request.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200) {
+				//nice
+			}
+		};
+		request.open("POST", "/livesearch", true);
+		request.send(document.getElementById("search").value);
+	}
+</script>
+{% endblock %}
+
+{% block content %}
+<form action="/search" method="GET">
+	<input id="search" name="q" placeholder="Search for recipes..." oninput="change_query()">
+	<input id="submit" type="submit" value="Search">
+</form>
+<div id="searchresults">
+	{% for recipe in recipes %}
+		<article>
+			<h2>nice</h2>
+		</article>
+	{% endfor %}
+</div>
+{% endblock %}
