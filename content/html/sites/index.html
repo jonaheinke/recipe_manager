@@ -10,11 +10,11 @@
 	<input id="search" name="q" placeholder="Search for recipes..." oninput="change_query()">
 	<input id="submit" type="submit" value="Search">
 </form>
-<div id="searchresults">
+<slot id="searchresults">
 	{% for recipe in recipes %}
 		<article>
 			<h2>nice</h2>
 		</article>
 	{% endfor %}
-</div>
+</slot>
 {% endblock %}
