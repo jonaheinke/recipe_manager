@@ -1,0 +1,15 @@
+@media (orientation: landscape) {
+	main {
+		background: #E0E0E0;
+		text-align: center;
+		padding: 1em 0;
+	}
+	/* ------------ main ------------- */
+	main input#search {
+		height: 2em;
+		width: 30em;
+	}
+	main input#submit {
+		height: 2em;
+	}
+}
