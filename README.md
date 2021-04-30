@@ -8,11 +8,12 @@ TBD
 - no annoying trackers and ads
 - simple HTML, CSS and JS without unnecessary code or wrapper elements
 
-Currently the home page consumes 5.3kB of data before browser cacheing and html/css minification.
+Currently the home page consumes 5kB of data before browser cacheing.
 
 ## Setup
 ```shell
-$ pip install CherryPy SQLAlchemy Jinja2 Whoosh css-html-js-minify # last one is optional
+$ pip install CherryPy SQLAlchemy Jinja2 jac Whoosh # css-html-js-minify last one is optional
+# on Max OS X (jac): export CFLAGS=-Qunused-arguments
 # insert recipe data into database
 $ python search_engine.py
 $ python server.py

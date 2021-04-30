@@ -1,0 +1,23 @@
+{% extends "html/index.html" %}
+
+{% block html_head %}
+<link rel="stylesheet" href="css/view.css">
+{% endblock %}
+
+{% block content %}
+<section id="heading">{% recipe["title"] %}</section>
+<section id="ingredients">
+	<ul>
+		{% for ingredient in recipe["ingredients"] %}
+		<li>{% ingredient %}</li>
+		{% endfor %}
+	</ul>
+</section>
+<section id="instructions">
+	<ol>
+		{% for instruction in recipe["instructions"] %}
+		<li>{% instruction %}</li>
+		{% endfor %}
+	</ol>
+</section>
+{% endblock %}
