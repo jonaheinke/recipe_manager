@@ -11,7 +11,7 @@ body {
 	--background: white;
 }
 body.dark {
-	--foreground: white;
+	--foreground: white;	
 	--background: black; /*#333*/
 }
 
@@ -20,6 +20,7 @@ body {
 	margin: 0;
 	color: var(--foreground);
 	background-color: var(--background);
+	font-family: "Playfair Display", Garamond;
 }
 form {
 	margin: 0;
@@ -65,6 +66,9 @@ https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme
 	-webkit-transition: .4s;
 	transition: .4s;
 	border-radius: 34px;
+}
+.slider:focus-within {
+	outline: var(--foreground);
 }
 .slider::before {
 	position: absolute;

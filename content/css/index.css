@@ -1,3 +1,29 @@
+form {
+	margin: auto;
+}
+
+section {
+	display: flex;
+}
+
+section a {
+	flex: 1 0 auto;
+
+	display: flex;
+	border-radius: 10px;
+	color: var(--foreground);
+	background-color: #505050;
+}
+
+section a img {
+	width: 100px;
+	height: 100px;
+}
+
+section a h2 {
+	flex: 0 1 auto;
+}
+
 @media (orientation: landscape) {
 	main {
 		background: #E0E0E0;
@@ -5,11 +31,11 @@
 		padding: 1em 0;
 	}
 	/* ------------ main ------------- */
-	main input#search {
+	form {
+		width: 50vw;
+	}
+	main input[type=search] {
 		height: 2em;
 		width: 30em;
-	}
-	main input#submit {
-		height: 2em;
 	}
 }

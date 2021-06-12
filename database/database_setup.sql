@@ -1,10 +1,11 @@
 create table if not exists category (
-	id integer primary key autoincrement,
+	categoryid integer primary key autoincrement,
 	name text not null
 );
 
 create table if not exists recipe (
-	id integer primary key autoincrement,
+	recipeid integer primary key autoincrement,
+	categoryid integer,
 	name text not null,
 	preptime integer,
 	cooktime integer,
