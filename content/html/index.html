@@ -3,14 +3,19 @@
 		<meta charset="utf-8">
 		<meta http-equiv="expires" content="21600">
 		<meta name="theme-color" content="#FF10C0">
-		<title>{% block title %}RECIPES{% endblock %}</title>
+		<title>{% block title %}Recipe Book{% endblock %}</title>
 		<link rel="stylesheet" href="css/base.css">
-		{% block html_head %}
+		{# https://fonts.google.com/specimen/Playfair+Display
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+		TODO: replace with local copys -#}
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&amp;display=swap">
+		{% block html_head -%}
 		<link rel="stylesheet" href="css/index.css">
 		{% compress "js" %}
 		<script type="text/javascript" src="js/index.js"></script>
 		{% endcompress %}
-		{% endblock %}
+		{%- endblock %}
 		{% compress "js" %}
 		<script type="text/javascript" src="js/base.js"></script>
 		{% endcompress %}
@@ -21,25 +26,19 @@
 				<h1>RECIPE BOOK</h1>
 				<i>A personal recipe book without trackers, bloat and ads.</i>
 			</div>
-			<label class="switch"><!--https://xkcd.com/1738/-->
-				<input type="checkbox" autocomplete="off" onclick="toggle_theme()" {{darkmode['checked']}}>
+			<label class="switch">{# https://xkcd.com/1738/ #}
+				<input type="checkbox" autocomplete="off" onchange="toggle_theme()" {{darkmode['checked']}}>
 				<div class="slider"></div>
 			</label>
 		</header>
 		<main>
-			{% block content %}
-			<form action="/search" method="GET">
-				<input id="search" name="q" placeholder="Search for recipes..." oninput="change_query()">
-				<input id="submit" type="submit" value="Search">
+			{% block content -%}
+			<form>
+				<input type="search" name="q" autocomplete="off" placeholder="Search for recipes..." oninput="change_query(event)">
+				{#- TODO: filter etc. #}
 			</form>
-			<slot id="searchresults">
-				{% for recipe in recipes %}
-					<article>
-						<h2>{{recipe["id"]}}: {{recipe["content"]}}</h2>
-					</article>
-				{% endfor %}
-			</slot>
-			{% endblock %}
+			<section id="searchresults"></section>
+			{%- endblock %}
 		</main>
 	</body>
 </html>
