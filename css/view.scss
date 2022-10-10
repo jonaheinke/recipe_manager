@@ -2,13 +2,18 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 }
-/*step in right direction: https://codepen.io/cimmanon/pen/CcGlE*/
+
+img {
+	max-width: 20vw;
+}
+
 section#heading {
 	width: 90vmax;
 	height: 100px;
 	background-color: var(--accent-blue);
 	flex-grow: 1;
 }
+
 section#ingredients {
 	width: 200px;
 	height: 800px;
@@ -17,6 +22,7 @@ section#ingredients {
 	flex-grow: 1;
 	align-self: flex-start;
 }
+
 section#instructions {
 	width: 400px;
 	height: 1000px;

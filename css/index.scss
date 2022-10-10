@@ -1,0 +1,63 @@
+section {
+	margin-top: 1rem;
+}
+
+section:empty {
+	margin: 0;
+}
+
+section a {
+	display: block;
+	border-radius: 1rem;
+	text-decoration: none;
+	color: var(--foreground);
+	background-color: var(--background);
+}
+
+section a:hover, section a:focus-within {
+	transition: all 0.2s linear;
+	background-color: var(--accent-violet);
+	color: white;
+}
+
+section a img {
+	display: block;
+	width: 100%;
+	border-radius: 1rem 1rem 0 0;
+}
+
+section a h3 {
+	margin: 0;
+	padding: 1rem;
+}
+
+/*Cards*/
+section.cards a {
+	min-width: 20%;
+	width: 190px;
+	margin-bottom: 20px;
+}
+section a img {
+	max-height: 300px;
+	object-fit: cover;
+}
+
+/*Mosaic*/
+section.mosaic a {
+	min-width: 20%;
+	width: 190px;
+	margin-bottom: 20px;
+}
+
+/*List*/
+section.list a {
+	width: 100%;
+}
+
+@media (orientation: landscape) {
+	/* ------------ main ------------- */
+	main {
+		background: #E0E0E0;
+		/*text-align: center;*/
+	}
+}

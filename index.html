@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="expires" content="21600">
+		<meta name="robots" content="noindex">
+		<meta name="theme-color" content="#FF10C0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=4.0">
+		<title>Jona's Recipe Book - Main Page</title>
+		
+		<!--Fonts-->
+		<!--https://fonts.google.com/specimen/Playfair+Display TODO: replace with local copys-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair Display">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&amp;display=swap">
+
+		<!--Base Stylesheets-->
+		<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+		<link rel="stylesheet" href="css/base.css">
+		
+		<!--Base Scripts-->
+		<!--<script src="//unpkg.com/alpinejs" defer></script>-->
+		<script src="https://unpkg.com/alpinejs" defer></script>
+		<script type="text/javascript" src="js/base.js"></script>
+		<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+
+		<!--Index Stylesheets and Scripts-->
+		<link rel="stylesheet" href="css/index.css">
+		<!--<script type="text/javascript" src="../js/index.js"></script>-->
+		<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+		<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+		<script>
+			const frames = {
+				home: 0,
+				search_results: 1,
+				view: 2,
+				edit: 3
+			};
+		</script>
+	</head>
+	<body class="transition" x-data="{current_frame: frames.home, search_query: ''}">
+		<header>
+			<div id="search">
+				<!--<img src="../icon/search.png" alt="magnifying glass for searching">-->
+				<input type="search" name="q" placeholder="What do you like to eat?" aria-placeholder="recipe I want to search for" autocomplete="on" autofocus x-model="search_query">
+			</div>
+			<div id="heading">
+				<h1>JONA'S RECIPE BOOK</h1>
+				<i>A personal recipe book without trackers, bloat and ads.</i>
+			</div>
+			<div style="text-align: right;">
+				<label class="switch"><!--https://xkcd.com/1738/ -->
+					<input type="checkbox" autocomplete="off" onchange="toggle_theme()">
+					<div class="slider"></div>
+				</label>
+			</div>
+		</header>
+		<noscript>You have to activate JavaScript on this site.</noscript>
+		<main x-show="current_frame == frames.home" x-cloak>
+			Homepage
+			<div style="width: 100%; height: 200px; background-color: gray;">
+				last searched
+			</div>
+			<div style="width: 100%; height: 200px; background-color: gray;">
+				last cooked
+			</div>
+			<div style="width: 100%; height: 200px; background-color: gray;">
+				least times cooked
+			</div>
+		</main>
+		<main x-show="current_frame == frames.search_results" x-cloak>
+			Search results
+		</main>
+		<main x-show="current_frame == frames.view" x-cloak>
+			view recipe
+		</main>
+		<main x-show="current_frame == frames.edit" x-cloak>
+			edit recipe
+		</main>
+		<!--
+		{% block content -%}
+		<main x-data="search" x-init="console.log('TODO: gather recommended recipes')" x-effect="load_search_results(searchquery)"><!--x-init="$watch('searchquery', query => load_search_results(query))"
+			<form action="javascript:void(0);">
+				<input type="search" x-model="searchquery" autocomplete="off" placeholder="Search for recipes..." autofocus><!--oninput="change_query(event)"
+				{#- TODO: filter etc. #}
+				<button>TODO: Filter</button>
+			</form>
+			<h2 x-text="searchquery != '' ? 'Search results' : 'Recommended'"></h2>
+			<span>Layout</span>
+			<div class="btn-group" role="group" aria-label="Basic outlined example">
+				<button class="btn btn-outline-primary" @click="layout = 'cards'">Cards</button>
+				<button class="btn btn-outline-primary" @click="layout = 'mosaic'">Mosaic</button>
+				<button class="btn btn-outline-primary" @click="layout = 'list'">List</button>
+			</div>
+			<section id="searchresults" :class="layout">
+				<template x-for="post in results">
+					<a :href="'view?id=' + post.id" rel="no-refresh" class="grid-item">
+						<img :src="post.src">
+						<h3 x-text="post.title"></h3>
+					</a>
+				</template>
+			</section>
+			<script>
+				window.document.addEventListener("alpine:initialized", () => {
+					var searchresults = window.document.getElementById("searchresults");
+					if(searchresults.classList.contains("mosaic")) {
+						//TODO: When layout chages from mosaic to something else, all individual styles (position, left, top) should be reset.
+						var msnry = new Masonry("#searchresults", {
+							itemSelector: ".grid-item",
+							gutter: 20
+						});
+						msnry.layout();
+						imagesLoaded(searchresults, function(instance) {
+							console.log("Images loaded.");
+							msnry.layout();
+							img = searchresults.getElementsByTagName("a")[0].firstElementChild;
+							console.log(img);
+							console.log(img.clientWidth);
+							console.log(img.clientHeight);
+							console.log(img.width);
+							console.log(img.height);
+						});
+					}
+				});
+			</script>
+		</main>
+		{%- endblock %}
+		-->
+	</body>
+</html>

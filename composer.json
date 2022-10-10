@@ -1,0 +1,6 @@
+{
+	"name": "jonaheinke/recipe_manager",
+	"require": {
+		"teamtnt/tntsearch": "^3.0"
+	}
+}

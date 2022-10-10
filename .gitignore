@@ -1,3 +1,4 @@
-__pycache__
-content/min/*
-search/*
+vendor/
+*.css.map
+*.psd
+old

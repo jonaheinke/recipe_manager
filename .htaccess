@@ -1,0 +1,12 @@
+#activates rewrites
+RewriteEngine On
+RewriteBase /
+
+#prevents file overrides
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#soft redirects all requests to index.php
+RewriteRule ^wiki/(.*)$ w/index.php?title=$1 [PT,L,QSA]
+RewriteRule ^wiki/*$ w/index.php [L,QSA]
+RewriteRule ^wiki$ w/index.php [L,QSA]
