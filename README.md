@@ -7,7 +7,7 @@
 
 ## Description
 
-TBD
+**TODO**
 
 ## Goals
 
@@ -17,7 +17,15 @@ TBD
 - simple HTML, CSS and JS without unnecessary code or wrapper elements
 - can be hosted locally or on a cheap/free server
 
-## Requirements for webserver
+## Navigating the repo
+
+- `index.html` is the main page, you should study this first
+- if you want to study the recipe database, look into **TODO**
+- if you want to study the search index, look into **TODO**
+
+## Installation
+
+### Requirements for webserver
 
 - PHP 7.1 or newer
 - MySQL
@@ -26,7 +34,7 @@ TBD
 - mbstring xtension for PHP
 - .htaccess enabled with rewrite engine
 
-## Setup
+### Setup
 
 1. git clone to local folder
 2. (not recommended) for newest TNTSearch version: run `composer update` in the project root

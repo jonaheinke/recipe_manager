@@ -1,1 +1,5 @@
+# list of linguist overrides: https://github.com/github/linguist/blob/master/docs/overrides.md
+
 css/*.css linguist-generated=true
+js/imagesloaded.pkgd.min.js linguist-vendored=true
+js/masonry.pkgd.min.js linguist-vendored=true
