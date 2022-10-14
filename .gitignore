@@ -1,11 +1,16 @@
+# exclude generated files
 vendor/
-example_images/
+
+# exclude old content
 old/
 
-# exclude some css files
-*.css.map
-*.css
-!index.css
+# exclude test images
+example_images/
 
 # exclude Photoshop files
 *.psd
+
+# exclude some CSS files
+*.css.map
+*.css
+!index.css

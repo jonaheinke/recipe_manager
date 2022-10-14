@@ -1,4 +1,4 @@
-# Website for managing recipes
+# personal website for managing recipes
 
 [![license](https://img.shields.io/github/license/jonaheinke/recipe_manager)](LICENSE)
 [![last commit](https://img.shields.io/github/last-commit/jonaheinke/recipe_manager)](https://github.com/jonaheinke/recipe_manager/commit)
@@ -12,12 +12,15 @@
 ## Goals
 
 - creating a simple, local recipe book directed at domestic use
+- simple import from other recipe websites
 - light on data traffic (when using mobile data)
 - no annoying trackers and ads
 - simple HTML, CSS and JS without unnecessary code or wrapper elements
 - can be hosted locally or on a cheap/free server
 
 ## Navigating the repo
+
+Recommendation: install the [Sass](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented) and [Sass Live Compiler](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass) extensions for VS Code
 
 - `index.html` is the main page, you should study this first
 - if you want to study the recipe database, look into **TODO**

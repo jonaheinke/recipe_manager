@@ -56,7 +56,7 @@
 			</div>
 		</header>
 		<noscript>You have to activate JavaScript on this site.</noscript>
-		<main x-show="current_frame == frames.home" x-cloak>
+		<main id="home" x-show="current_frame == frames.home" x-cloak>
 			Homepage
 			<div style="width: 100%; background-color: gray;" x-show="search_query != ''" x-transition>
 				Search results
@@ -135,10 +135,10 @@
 				</div>
 			</div>
 		</main>
-		<main x-show="current_frame == frames.view" x-cloak>
+		<main id="view" x-show="current_frame == frames.view" x-cloak>
 			view recipe
 		</main>
-		<main x-show="current_frame == frames.edit" x-cloak>
+		<main id="edit" x-show="current_frame == frames.edit" x-cloak>
 			edit recipe
 		</main>
 	</body>

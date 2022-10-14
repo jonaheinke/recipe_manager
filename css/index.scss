@@ -1,6 +1,8 @@
 @use "sass:math";
 
+@use "home";
 @use "view";
+@use "edit";
 
 
 
@@ -16,7 +18,7 @@ body {
 	--background: white;
 
 	&.dark {
-		--foreground: white;	
+		--foreground: white;
 		--background: black; /*#333*/
 	}
 }
@@ -56,7 +58,7 @@ header {
 	gap: 3rem;
 	text-align: center;
 
-	& > * {
+	> * {
 		flex: 1 0 0;
 	}
 	#search {
@@ -77,24 +79,24 @@ header {
 			img {
 				width: 2rem;
 				height: 2rem;
-				margin: auto;
 			}
 		}
 		#search_icon {
-			left: 0.3rem;
+			left: 0.1rem;
 			pointer-events: none;
 		}
 		#cross_icon {
-			right: -0.3rem;
+			right: 0;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 		input {
 			box-sizing: border-box;
 			width: 100%;
-			/*height: 100%;
-			padding: 0 1.4rem 0 4rem;*/
-			padding: 0.5rem 2.5rem;
+			padding: 0.5rem 2.2rem 0.5rem 2.4rem;
 			border-radius: math.div($header-inner-height, 2);
-			/*border: 1px solid #F0F0F0;*/
 			border: 0;
 			font-size: 1.1rem;
 			background-color: #F5F5F5;
