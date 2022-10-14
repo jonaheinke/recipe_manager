@@ -1,3 +1,63 @@
+var body = null;
+//var earths_shadow = null;
+var cookie = document.cookie;
+var darkmode = cookie[cookie.indexOf("=") + 1] != "0";
+
+function set_cookie() {
+	document.cookie = "darkmode=" + +darkmode + "; SameSite=Strict; path=/";
+}
+
+if(cookie.indexOf("darkmode=") == -1) {
+	darkmode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+	set_cookie();
+	if(darkmode) window.location.reload();
+}
+
+function toggle_theme() {
+	if(body != null) {
+		body.classList.toggle("dark");
+		darkmode = !darkmode;
+		set_cookie();
+	}
+}
+
+function image_animation(event) {
+	event.preventDefault();
+	event = event || window.event;
+    var card = event.target || e.srcElement;
+	console.log(card);
+
+	//var image = card.querySelector("img");
+	var image = card;
+	console.log(image);
+	//TODO: change this to image
+	var coords = card.getBoundingClientRect();
+	var target_x = 100;
+	var target_y = 100;
+	var target_width = 400;
+	var target_height = 400;
+
+	//card.style.zIndex = 1;
+	console.log("translate(" + (target_x - coords.left) + "px, " + (target_y - coords.top) + "px) scale(" + (target_width / coords.width) + ", " + (target_height / coords.height) + ")")
+	image.style.transform = "translate(" + (target_x - coords.left) + "px, " + (target_y - coords.top) + "px) scale(" + (target_width / coords.width) + ", " + (target_height / coords.height) + ")";
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	//earths_shadow = document.querySelector(".slider::after");
+	body = document.querySelector("body");
+
+	var cards = document.querySelectorAll(".card");
+	var card_images = document.querySelectorAll(".card > img");
+	console.log("DOMContentLoaded finished");
+});
+
+document.addEventListener("keydown", e => {
+	if(e.ctrlKey && e.key === "s") {
+		e.preventDefault();
+		console.log("CTRL + S");
+	}
+});
+
 document.addEventListener("alpine:init", () => {
 	Alpine.data("search", () => ({
 		init() {

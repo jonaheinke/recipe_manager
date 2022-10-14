@@ -1,4 +1,11 @@
 vendor/
+example_images/
+old/
+
+# exclude some css files
 *.css.map
+*.css
+!index.css
+
+# exclude Photoshop files
 *.psd
-old

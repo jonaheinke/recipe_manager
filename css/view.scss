@@ -1,32 +1,3 @@
-main {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-img {
-	max-width: 20vw;
-}
-
-section#heading {
-	width: 90vmax;
-	height: 100px;
-	background-color: var(--accent-blue);
-	flex-grow: 1;
-}
-
-section#ingredients {
-	width: 200px;
-	height: 800px;
-	background-color: var(--accent-violet);
-	flex-shrink: 0;
-	flex-grow: 1;
-	align-self: flex-start;
-}
-
-section#instructions {
-	width: 400px;
-	height: 1000px;
-	background-color: var(--accent-gold);
-	flex-shrink: 0;
-	flex-grow: 1;
+main#view {
+	/**/
 }
