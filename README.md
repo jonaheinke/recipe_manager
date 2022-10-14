@@ -1,4 +1,4 @@
-# personal website for managing recipes
+# Personal website for managing recipes
 
 [![license](https://img.shields.io/github/license/jonaheinke/recipe_manager)](LICENSE)
 [![last commit](https://img.shields.io/github/last-commit/jonaheinke/recipe_manager)](https://github.com/jonaheinke/recipe_manager/commit)
@@ -11,12 +11,12 @@
 
 ## Goals
 
-- creating a simple, local recipe book directed at domestic use
-- simple import from other recipe websites
+- creating a simple, local recipe book 📙 directed at domestic use
+- simple import from other recipe websites ⤵
 - light on data traffic (when using mobile data)
-- no annoying trackers and ads
-- simple HTML, CSS and JS without unnecessary code or wrapper elements
-- can be hosted locally or on a cheap/free server
+- no annoying trackers, ads and life-changing background stories ❌🗨
+- simple HTML, CSS and JS without unnecessary code or wrapper elements 🧾
+- can be hosted locally or on a cheap/free server 🖥
 
 ## Navigating the repo
 
@@ -27,6 +27,11 @@ Recommendation: install the [Sass](https://marketplace.visualstudio.com/items?it
 - if you want to study the search index, look into **TODO**
 
 ## Installation
+
+### Requirements for local PC
+
+- PHP 7.1 or newer
+- [Composer dependency manager](https://getcomposer.org/)
 
 ### Requirements for webserver
 
