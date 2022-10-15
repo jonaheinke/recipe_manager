@@ -1,4 +1,5 @@
 # list of linguist overrides: https://github.com/github/linguist/blob/master/docs/overrides.md
 
 *.css linguist-generated
+*.css.map linguist-generated
 *.pkgd.min.js linguist-vendored

@@ -1,5 +1,9 @@
+@use "mixins" as *;
+
+
+
 .cards {
-	display: flex;
+	@include display-flex;
 	gap: 2rem;
 	padding: 2rem;
 

@@ -1,5 +1,6 @@
 @use "sass:math";
 
+@use "mixins" as *;
 @use "home";
 @use "view";
 @use "edit";
@@ -51,10 +52,10 @@ header {
 
 	height: $header-inner-height;
 	padding: $header-padding;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
+	@include display-flex;
+	@include flex-wrap;
+	@include align-items(center);
+	@include justify-content(space-between);
 	gap: 3rem;
 	text-align: center;
 
@@ -70,9 +71,9 @@ header {
 			top: 0;
 			height: 100%;
 			aspect-ratio: 1/1;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@include display-flex;
+			@include align-items(center);
+			@include justify-content(center);
 			mix-blend-mode: difference;
 			opacity: 0.5;
 
@@ -93,7 +94,7 @@ header {
 			}
 		}
 		input {
-			box-sizing: border-box;
+			@include box-sizing(border-box);
 			width: 100%;
 			padding: 0.5rem 2.2rem 0.5rem 2.4rem;
 			border-radius: math.div($header-inner-height, 2);
@@ -111,10 +112,10 @@ header {
 		}
 	}
 	#heading {
-		display: flex;
-		flex-direction: column;
-		align-items: stretch;
-		justify-content: space-between;
+		@include display-flex;
+		@include align-items(stretch);
+		@include justify-content(space-between);
+		@include flex-direction(column);
 		gap: $header-padding;
 
 		h1 {
