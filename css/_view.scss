@@ -1,0 +1,54 @@
+@use "sass:math";
+
+@use "mixins" as *;
+
+
+
+main#view {
+	@include display-flex;
+
+	.left-column, .right-column {
+		width: 50%;
+		height: 500px;
+	}
+
+	.left-column {
+		img.recipeimage {
+			display: block;
+			height: 30rem;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+	.right-column {
+	}
+
+	.choice-buttons {
+		$width: 10rem;
+		width: $width;
+		$height: 2rem;
+		height: $height;
+		display: inline-block;
+		border-radius: math.div($height, 2);
+		background-color: gray;
+
+		input {
+			display: none;
+		}
+		label {
+			.slider {
+				position: absolute;
+				z-index: -1;
+				width: math.div($width, 2);
+				height: $height;
+				border-radius: math.div($height, 2);
+				background-color: white;
+			}
+			img {
+				vertical-align: initial;
+				width: auto;
+				height: 1.5rem;
+			}
+		}
+	}
+}

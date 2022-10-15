@@ -44,7 +44,11 @@ Recommendation: install the [Sass](https://marketplace.visualstudio.com/items?it
 
 ### Setup
 
-1. git clone to local folder
-2. (not recommended) for newest TNTSearch version: run `composer update` in the project root
+1. `git clone` to local folder
+2. (not recommended) for newest TNTSearch version: run `composer update` in the project root and skip to step 4
 3. run `composer install` in the project root
 4. copy local folder contents to the root of the webserver
+5. create a MySQL database and user
+6. (optional) import the last backup to the database
+7. save the database credentials to a file **TODO**
+8. done!

@@ -1,6 +1,7 @@
 {
 	"name": "jonaheinke/recipe_manager",
 	"require": {
-		"teamtnt/tntsearch": "^3.0"
+		"teamtnt/tntsearch": "^3.0",
+		"brick/schema": "^0.1.1"
 	}
 }

@@ -9,9 +9,3 @@ example_images/
 
 # exclude Photoshop files
 *.psd
-
-# exclude some CSS files
-*.css.map
-!index.css.map
-*.css
-!index.css

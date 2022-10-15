@@ -1,3 +1,9 @@
+const frames = {
+	home: 0,
+	view: 1,
+	edit: 2
+};
+
 var body = null;
 //var earths_shadow = null;
 var cookie = document.cookie;
